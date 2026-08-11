@@ -26,7 +26,7 @@
   /*
 
   /*---------- 01. On Load Function ----------*/
-  $(window).on('load', function () {
+  $(document).ready(function () {
     $('.preloader').fadeOut();
   });
 
