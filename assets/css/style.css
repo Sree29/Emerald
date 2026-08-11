@@ -10244,3 +10244,6 @@ img.logo, .footer-logo img, .header-logo img, .preloader-inner img {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.main-menu > ul > li.active > a, .main-menu ul li.active > a, .footer-menu ul li.active > a, .mobile-menu ul li.active > a { color: var(--theme-color) !important; }
+
