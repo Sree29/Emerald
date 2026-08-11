@@ -1,0 +1,352 @@
+.vs-banner {
+  $self: &;
+  position: relative;
+  z-index: 1;
+
+  @include sm {
+    &__content {
+      text-align: center;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--title-color);
+    z-index: -1;
+    min-height: 910px;
+
+    @include lg {
+      min-height: 790px;
+    }
+
+    @include md {
+      min-height: 675px;
+    }
+
+    @include sm {
+      min-height: 90%;
+    }
+  }
+
+  &__overlay-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__inner {
+    padding: 253px 0 0 0;
+
+    @include md {
+      padding: 230px 0 0 0;
+    }
+  }
+
+  &__subtitle {
+    color: var(--theme-color);
+    font-family: var(--title-font);
+    font-size: 20px;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 2px;
+
+    @include xs {
+      letter-spacing: 1px;
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: 4.5px;
+    font-weight: 600;
+    line-height: 1.47;
+    margin: 0 0 27px 0;
+
+    @include sm {
+      letter-spacing: 3px;
+    }
+
+    @include xs {
+      letter-spacing: 2px;
+      font-size: 25px;
+    }
+
+    span {
+      color: var(--theme-color);
+    }
+
+    img {
+      margin-top: -30px;
+      border-radius: 100px;
+
+      @include sm {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    @include sm {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .vs-btn {
+
+      &::before,
+      &::after {
+        background-color: var(--white-color);
+      }
+
+      &:hover {
+        color: var(--title-color);
+
+        span {
+          background-color: var(--title-color);
+        }
+      }
+    }
+
+    .play-btn {
+
+      &::before,
+      &::after {
+        background-color: var(--white-color);
+      }
+
+      &>i {
+        background-color: var(--title-color);
+        border: 2px solid var(--white-color);
+        padding-left: 8px;
+      }
+
+      &:hover {
+
+        &::before,
+        &::after {
+          background-color: var(--theme-color);
+        }
+
+        &>i {
+          border: 2px solid var(--theme-color);
+        }
+      }
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+  }
+
+  &__img {
+    padding-top: 73px;
+  }
+
+  &--style2 {
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      background-color: rgba($color: #ffb400, $alpha: 5%);
+      z-index: -2;
+    }
+
+    &::after {
+      background-color: rgba($color: #01000f, $alpha: 5%);
+      z-index: -1;
+    }
+
+    #{$self}__inner {
+      padding: 140px 0 90px 0;
+    }
+
+    #{$self}__title {
+      color: var(--title-color);
+      margin: 0 0 15px 0;
+    }
+
+    #{$self}__img {
+      padding-top: 0;
+      position: relative;
+      margin-bottom: 30px;
+      display: inline-block;
+
+      @include sm {
+        img {
+          margin-bottom: 30px;
+        }
+      }
+
+      &--style2 {
+        margin: 0px -83px 0 0;
+        padding: 70px 55px 0 55px;
+        position: relative;
+        z-index: 1;
+
+        @include xl {
+          margin: 0 0 0 0;
+        }
+
+        #{$self}__img2 {
+          height: 503px;
+          width: 100%;
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          background-color: var(--title-color);
+          right: 0;
+        }
+      }
+    }
+
+    #{$self}__link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &::before,
+      &::after {
+        background-color: var(--theme-color);
+        border: 1px solid rgba(var(--theme-color), 30%);
+      }
+    }
+
+    #{$self}__text {
+      padding-right: 0px;
+      margin-bottom: 0;
+
+      @include sm {
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &--style3 {
+    #{$self}__inner {
+      display: flex;
+      align-items: center;
+      padding-bottom: 182px;
+      padding-top: 356px;
+      min-height: 877px;
+      position: relative;
+      z-index: 1;
+
+      @include md {
+        padding-bottom: 182px;
+        padding-top: 140px;
+        min-height: 715px;
+      }
+
+      .overlay {
+        background-color: var(--title-color);
+        opacity: 0.4;
+        z-index: -1;
+      }
+    }
+
+    #{$self}__settings {
+      position: absolute;
+      bottom: 30px;
+      right: 0px;
+      left: auto;
+      max-width: 500px;
+
+      @include md {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .slick-slide {
+        margin-right: 20px;
+
+        @include md {
+          margin-right: 0;
+        }
+      }
+    }
+
+    #{$self}__tab {
+      &-item {
+        display: flex;
+        align-items: center;
+        background-color: rgba($color: #fff, $alpha: 65%);
+        gap: 15px;
+        padding: 10px;
+        min-width: 210px;
+        @include smooth-transition;
+
+        img {
+          max-width: 65px;
+        }
+
+        h2 {
+          font-size: 14px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .slick-slide.slick-current.slick-active {
+      #{$self}__tab-item {
+        background-color: rgba($color: #FFB400, $alpha: 100%);
+      }
+    }
+  }
+}
+
+.slick-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--white-color);
+  font-family: $title-font;
+  margin: 0 0 20px 0;
+
+  @include md {
+    justify-content: center;
+  }
+
+  &__active,
+  &__total {
+    @include smooth-transition;
+    min-width: 14px;
+  }
+
+  .vs-custom-dots {
+    display: flex;
+
+    button {
+      width: 37px;
+      height: 5px;
+      background-color: $white-color;
+      border: 0;
+      padding: 0;
+      @include smooth-transition;
+
+      &.active {
+        width: 175px;
+        background-color: $theme-color;
+      }
+    }
+  }
+}

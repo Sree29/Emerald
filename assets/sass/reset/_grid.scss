@@ -1,0 +1,98 @@
+.slick-track > [class*="col"] {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) / 2);
+  padding-left: calc(var(--bs-gutter-x) / 2);
+  margin-top: var(--bs-gutter-y);
+}
+
+@media (min-width: $sm) {
+  .row:not([class*="gx-"]) {
+    --bs-gutter-x: 30px;
+  }
+}
+
+.gy-gx {
+  --bs-gutter-y: var(--bs-gutter-x);
+}
+
+.gy-30 {
+  --bs-gutter-y: 30px;
+}
+
+.gx-15 {
+  --bs-gutter-x: 15px;
+}
+
+@media (min-width: $lg) {
+  .gx-45 {
+    --bs-gutter-x: 45px;
+  }
+
+  .gx-60 {
+    --bs-gutter-x: 60px;
+  }
+
+  .gx-50 {
+    --bs-gutter-x: 50px;
+  }
+
+  .gx-70 {
+    --bs-gutter-x: 70px;
+  }
+  .gx-80 {
+    --bs-gutter-x: 80px;
+  }
+}
+
+@media (min-width: $ml) {
+  .gx-20 {
+    --bs-gutter-x: 20px;
+  }
+
+  .gx-30 {
+    --bs-gutter-x: 30px;
+  }
+
+  .gx-40 {
+    --bs-gutter-x: 40px;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 364px 531px 364px; /* Adjusted column widths */
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+  justify-content: center; /* Centers the grid within the parent */
+  @include respond-below(xl) {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-item.large {
+  grid-column: 2; /* The large item stays in the second column */
+  grid-row: 1 / 3; /* It spans two rows */
+}
+
+@include md {
+  .grid-container {
+    grid-template-columns: repeat(2, auto); /* Switch to 2 columns */
+  }
+
+  .grid-item.large {
+    grid-column: span 2; /* The large item still spans 2 columns */
+    grid-row: auto; /* Adjust row span if necessary */
+  }
+}
+
+@include sm {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .grid-item.large {
+    grid-column: auto; /* Full width in single column */
+    grid-row: auto; /* No row span needed */
+  }
+}

@@ -1,0 +1,235 @@
+.team-style {
+  .team-img {
+    position: relative;
+    padding: 0 2px 2px 0;
+    background-color: rgba($color: #01000f, $alpha: 0.33);
+    margin-bottom: 30px;
+    @include smooth-transition;
+    @include transition-delay(1, 0.1s);
+
+    img {
+      width: 100%;
+
+      @include respond-below(md) {
+        width: 100%;
+      }
+    }
+  }
+
+  .team-social {
+    position: absolute;
+    bottom: 27px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    a {
+      @include equal-size(35px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--title-color);
+      font-size: 14px;
+      color: var(--white-color);
+      transform: translateX(30px) rotate(180deg) scale(0);
+      opacity: 0;
+      visibility: hidden;
+      @include smooth-transition;
+      @include transition-delay(4, 0.01s);
+
+      &:hover {
+        background-color: var(--theme-color);
+        color: var(--title-color);
+        transition-delay: 0ms;
+      }
+    }
+  }
+
+  .team-title {
+    font-size: 30px;
+    font-weight: 400;
+    margin: -0.38em 0 5px 0;
+  }
+
+  .team-degi {
+    margin-bottom: 0;
+    color: var(--theme-color);
+  }
+
+  &:hover {
+    .team-img {
+      background-color: var(--theme-color);
+      @include transition-delay(1, 0.1s);
+    }
+
+    .team-social a {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0px) rotate(0deg) scale(1);
+      @include smooth-transition;
+      @include transition-delay(4, 0.01s);
+
+      &:hover {
+        transition-delay: 0ms;
+      }
+    }
+  }
+}
+
+.vs-card {
+
+  &__title {
+    font-size: 50px;
+    color: var(--theme-color);
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0e121d;
+    font-family: var(--title-font);
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0.5rem 0 1rem;
+    line-height: 1.6;
+  }
+
+  &__features {
+    display: flex;
+    justify-content: space-between;
+    max-width: 83%;
+
+    @include sm {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1rem;
+
+    .vs-social {
+      width: 35px;
+      height: 35px;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0e121d;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #f5a623;
+        color: #fff;
+        border-color: #f5a623;
+      }
+    }
+  }
+}
+
+.vs-feature-list {
+  list-style: none;
+  padding: 0;
+
+  &__item {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: var(--title-font);
+    color: var(--title-color);
+
+    &::before {
+      content: "•";
+      color: #f5a623;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.vs-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 48%;
+  margin-bottom: 2rem;
+
+  @include sm {
+    width: 100%;
+  }
+
+  &__icon {
+    font-size: 1.2rem;
+    color: #f5a623;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  &__details {
+    .vs-contact__label {
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 2px;
+    }
+
+    .vs-contact__value {
+      font-weight: 600;
+      margin-bottom: 0;
+      color: var(--title-color);
+      font-size: 20px;
+      font-family: var(--title-font);
+
+      &:hover {
+        color: var(--theme-color);
+      }
+    }
+  }
+}
+
+.progress-box {
+  $self: &;
+
+  &.style2 {
+    #{$self}__title {
+      color: var(--title-color);
+      text-transform: capitalize;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    #{$self}__progress {
+      height: 10px;
+      background-color: var(--title-color);
+      border-radius: 6px;
+      border: 0;
+    }
+
+    #{$self}__number {
+      font-size: 20px;
+      color: var(--title-color);
+      font-weight: 400;
+    }
+  }
+}

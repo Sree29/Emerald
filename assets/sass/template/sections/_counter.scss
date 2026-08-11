@@ -1,0 +1,17 @@
+.counter-style {
+  background-color: var(--bg-color1);
+  padding: 18px 25px;
+  margin-bottom: 25px;
+  min-height: 110px;
+  .counter-title {
+    font-size: 30px;
+    font-family: var(--title-font);
+    margin-bottom: 0;
+    color: var(--white-color);
+    font-weight: 400;
+  }
+  .counter-subtitle {
+    color: var(--white-color);
+    margin-bottom: 0;
+  }
+}

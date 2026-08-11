@@ -1,0 +1,65 @@
+.list-style {
+  ul {
+    padding: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 33px;
+    max-width: 100%;
+    @include respond-below(sm) {
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 20px;
+    }
+    li {
+      padding-left: 43px;
+      position: relative;
+      display: inline-block;
+      font-family: var(--title-font);
+      color: var(--title-color);
+      font-size: 20px;
+      &::before {
+        position: absolute;
+        content: "";
+        font-family: var(--icon-font);
+        left: 0;
+        color: var(--theme-color);
+        font-weight: 600;
+        font-size: 18px;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMzEiIHZpZXdCb3g9IjAgMCAzMyAzMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTUiIGN5PSIxNiIgcj0iMTQuNSIgc3Ryb2tlPSIjNjg2ODY4Ii8+CjxwYXRoIGQ9Ik0zMS43ODEyIDQuNzg1MTZDMzIuMzY3MiA1LjQ0OTIyIDMyLjM2NzIgNi4wOTM3NSAzMS43ODEyIDYuNzE4NzVMMTYuMzEyNSAyMi4xODc1QzE1LjY4NzUgMjIuNzczNCAxNS4wNDMgMjIuNzczNCAxNC4zNzg5IDIyLjE4NzVMNi40MTAxNiAxNC4yMTg4QzUuODYzMjggMTMuNTkzOCA1Ljg2MzI4IDEyLjk0OTIgNi40MTAxNiAxMi4yODUyQzcuMDc0MjIgMTEuNzM4MyA3LjczODI4IDExLjczODMgOC40MDIzNCAxMi4yODUyTDE1LjM3NSAxOS4yNTc4TDI5Ljg0NzcgNC43ODUxNkMzMC41MTE3IDQuMjM4MjggMzEuMTU2MiA0LjIzODI4IDMxLjc4MTIgNC43ODUxNloiIGZpbGw9IiMwMTAwMEYiLz4KPC9zdmc+Cg==");
+        width: 33px;
+        height: 31px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  &.style2 {
+    ul {
+      row-gap: 11px;
+      li {
+        padding-left: 29px;
+        font-family: var(--body-font);
+        color: var(--body-color);
+        font-size: 18px;
+        font-weight: 500;
+        &::before {
+          background-image: none;
+          content: "\f058";
+          font-weight: 400;
+          width: auto;
+          height: auto;
+          top: 5px;
+          line-height: 1;
+          transform: none;
+        }
+      }
+    }
+  }
+  &.style3 {
+    ul {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.brand-style1 {
+  text-align: center;
+  img {
+    filter: opacity(0.6);
+    @include smooth-transition;
+  }
+  &:hover {
+    img {
+      filter: opacity(1);
+    }
+  }
+}

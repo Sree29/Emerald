@@ -1,0 +1,239 @@
+.bf-icon-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 95%;
+
+  .bf-icon {
+    min-width: 50px;
+    min-height: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--title-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bf-title {
+    font-size: 20px;
+    font-family: var(--title-font);
+    color: var(--title-color);
+    display: block;
+    line-height: 30px;
+  }
+}
+
+.bf-text {
+  max-width: 90%;
+
+  @include md {
+    max-width: 100%;
+  }
+}
+
+.bal-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  overflow: hidden;
+  border-radius: 0px 0 0px 0;
+}
+
+.bal-after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bal-before {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  overflow: hidden;
+}
+
+.bal-after,
+.bal-before {
+  pointer-events: none;
+}
+
+.bal-before-inset {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.bal-after img,
+.bal-before img {
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.bal-beforePosition {
+  background: var(--theme-color);
+  color: #fff;
+  left: 0;
+  pointer-events: none;
+  border-radius: 4px;
+  padding: 5px 18px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--title-font);
+}
+
+.bal-afterPosition {
+  background: var(--theme-color);
+  color: #fff;
+  right: 0;
+  pointer-events: none;
+  border-radius: 4px;
+  padding: 5px 18px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--title-font);
+}
+
+.beforeLabel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 44px;
+  margin: 0;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-family: var(--title-font);
+
+  @include sm {
+    left: 10px;
+  }
+}
+
+.afterLabel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 44px;
+  margin: 0rem;
+  font-weight: 600;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-family: var(--title-font);
+
+  @include sm {
+    right: 10px;
+  }
+}
+
+.bal-handle {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  border: 5px solid #fff;
+  background-color: var(--theme-color);
+  border-radius: 1000px;
+  z-index: 20;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.handle-left-arrow,
+.handle-right-arrow {
+  width: 0;
+  height: 0;
+  border: 6px inset transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+}
+
+.handle-left-arrow {
+  border-right: 6px solid #fff;
+  left: 20px;
+  margin-left: -17px;
+}
+
+.handle-right-arrow {
+  border-left: 6px solid #fff;
+  right: 20px;
+  margin-right: -17px;
+}
+
+.bal-handle::before {
+  bottom: 50%;
+  margin-bottom: 36px;
+}
+
+.bal-handle::after {
+  top: 50%;
+  margin-top: 36px;
+}
+
+.bal-handle::before,
+.bal-handle::after {
+  content: " ";
+  display: block;
+  width: 4.63px;
+  background: #fff;
+  height: 9999px;
+  position: absolute;
+  left: 50%;
+  margin-left: -1.5px;
+  box-shadow: none;
+}
+
+.com-container {
+  height: 482px;
+  padding: 50px 54px 0 0;
+  margin-left: -50px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 95%;
+    height: 90%;
+    border: 1px solid var(--body-color);
+    top: 0;
+    right: 0;
+  }
+
+  @include lg {
+    padding: 0;
+    margin-left: 0;
+  }
+}

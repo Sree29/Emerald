@@ -1,0 +1,233 @@
+.footer-copyright {
+  margin-bottom: 0;
+  text-align: center;
+  background-color: rgba($color: #323232, $alpha: 30%);
+  padding: 22px 15px;
+  color: var(--white-color);
+
+  a {
+    &:hover {
+      color: var(--white-color);
+    }
+  }
+
+  &.style2 {
+    background-color: var(--theme-color);
+
+    a {
+      color: var(--white-color);
+      position: relative;
+      font-weight: 700;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        left: auto;
+        right: 0;
+        height: 1px;
+        background-color: var(--white-color);
+        transition: all ease 0.4s;
+        bottom: 0;
+      }
+
+      &:hover {
+        color: var(--white-color);
+
+        &::before {
+          width: 100%;
+          left: 0;
+          right: auto;
+        }
+      }
+    }
+  }
+}
+
+.footer-layout1 {
+  padding: 0 0 22px 0;
+  position: relative;
+  z-index: 1;
+
+  .overlay {
+    background-color: var(--bg-color2);
+    opacity: 90%;
+    z-index: -1;
+
+    &.style2 {
+      background-color: var(--bg-color2);
+    }
+  }
+}
+
+.widget-area {
+  padding: 80px 0;
+}
+
+.footer-layout2 {
+  background: var(--title-color);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.footer-title {
+  color: var(--white-color);
+  font-size: 30px;
+  font-weight: 400;
+  padding: 0 0 15px 0;
+  position: relative;
+  margin: 0 0 25px 0;
+
+  @include md {
+    text-align: center;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    background-color: var(--theme-color);
+    width: 71px;
+    bottom: 0;
+    left: 0;
+
+    @include md {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &::after {
+    width: 12px;
+    left: 80px;
+
+    @include md {
+      display: none;
+    }
+  }
+}
+
+.footer-menu2 {
+  ul {
+    display: grid;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 12px;
+
+    @include md {
+      justify-content: center;
+    }
+
+    li {
+      display: block;
+
+      a {
+        color: var(--white-color);
+        position: relative;
+        padding-left: 20px;
+        display: inline-block;
+
+        &::before {
+          position: absolute;
+          content: '\f105';
+          font-family: var(--icon-font);
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          line-height: 1;
+          font-size: 17px;
+          display: inline-flex;
+        }
+
+        &:hover {
+          color: var(--theme-color);
+          transform: translateX(10px);
+        }
+      }
+    }
+  }
+}
+
+.sidebar-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 269px;
+
+  @include md {
+    max-width: 100%;
+  }
+
+  .gallery-thumb {
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+
+    img {
+      transition: all ease 0.4s;
+      width: 100%;
+      transform: scale(1);
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--theme-color);
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      transition: all ease 0.4s;
+    }
+
+    .gal-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: var(--icon-size, 35px);
+      height: var(--icon-size, 35px);
+      margin: calc(var(--icon-size, 35px) / -2) 0 0 calc(var(--icon-size, 35px) / -2);
+      text-align: center;
+      font-size: 18px;
+      color: var(--white-color);
+      background-color: transparent;
+      border-radius: 50%;
+      transition: all ease 0.4s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        transform: scale(1);
+        background-color: var(--white-color);
+        color: var(--theme-color);
+      }
+    }
+
+    &:hover {
+      &:before {
+        opacity: 0.8;
+        visibility: visible;
+      }
+
+      .gal-btn {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.1s;
+      }
+
+      img {
+        transform: scale(1.12);
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+.testi-item {
+  text-align: center;
+  padding: 0px 30px 25px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+
+  @include lg {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  @include sm {
+    padding: 0px 10px 25px;
+  }
+
+  .testi-eles {
+    position: absolute;
+    width: 100%;
+    min-height: 296px;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    z-index: -1;
+    min-height: 87%;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 123px;
+      border: 1px solid var(--vs-border-color);
+      left: 0;
+
+      @include md {
+        height: 80px;
+      }
+    }
+
+    &::before {
+      top: 0px;
+      border-bottom: 0;
+    }
+
+    &::after {
+      top: auto;
+      bottom: 0;
+      border-top: 0;
+    }
+  }
+
+  .ele1,
+  .ele2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      path {
+        @include smooth-transition;
+        stroke: var(--vs-border-color);
+      }
+    }
+  }
+
+  .ele1 {
+    left: -15px;
+  }
+
+  .ele2 {
+    left: auto;
+    right: -15px;
+  }
+
+  .testi-avatar {
+    margin-bottom: 20px;
+    display: inline-block;
+    border: 1px solid var(--vs-border-color);
+    @include smooth-transition;
+  }
+
+  .testi-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: var(--theme-color);
+    gap: 4px;
+  }
+
+  .testi-name {
+    font-size: 24px;
+    margin: 0 0 2px 0;
+    font-weight: 400;
+  }
+
+  .testi-position {
+    display: block;
+    font-size: 14px;
+    color: var(--theme-color);
+  }
+
+  .testi-text {
+    margin: 0 0 10px 0;
+    font-style: italic;
+    padding: 0 0px;
+
+    @include md {
+      padding: 0 20px;
+    }
+  }
+}
+
+.testi-carousel {
+  .slick-slide.slick-current.slick-active.slick-center {
+    .testi-item {
+      .testi-avatar {
+        border-color: var(--theme-color);
+      }
+
+      .testi-eles {
+
+        &::before,
+        &::after {
+          border-color: var(--theme-color);
+        }
+
+        .ele1,
+        .ele2 {
+          svg {
+            path {
+              @include smooth-transition;
+              stroke: var(--theme-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.vs-testi--layout1 {
+  @media (max-width: 991px) {
+    .container-fluid {
+      max-width: 720px;
+    }
+  }
+}
+
+.vs-testi--layout1 {
+  @media (max-width: 767px) {
+    .container-fluid {
+      max-width: 540px;
+    }
+  }
+}
