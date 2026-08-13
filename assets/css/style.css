@@ -3932,7 +3932,7 @@ a.text-theme:hover,
 /* Medium devices */
 @media (max-width: 991px) {
   .footer-menu {
-    display: none;
+    display: block;
   }
 }
 /*------------------- 4.2. Header  -------------------*/

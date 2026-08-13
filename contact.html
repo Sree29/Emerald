@@ -147,12 +147,12 @@
       <!-- Header Top -->
       <div class="container">
         <div class="row justify-content-center align-items-center gy-1">
-          <div class="col-lg-auto col-auto d-none d-md-block flex-grow-1">
-            <p class="header-text">
+          <div class="col-lg-auto col-12 text-center">
+            <p class="header-text mb-0">
               Welcome to Emerald Habitat
             </p>
           </div>
-          <div class="col-lg-auto col-auto d-none d-md-block " data-wow-delay="0.4s">
+          <div class="col-lg-auto col-12 text-center" " data-wow-delay="0.4s>
             <a class="header-text" href="tel:+918078901742">
               <i class="fal fa-phone-alt"></i>
               8078901742 / 9947356685
@@ -449,6 +449,24 @@ VS Footer Section End
     }
     .floating-whatsapp svg {
       margin: auto;
+    }
+
+    @media (max-width: 767px) {
+      .whatsapp-container {
+        bottom: 80px;
+        right: 20px;
+      }
+      .whatsapp-text {
+        display: block;
+      }
+      .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+      }
+      .floating-whatsapp svg {
+        width: 28px;
+        height: 28px;
+      }
     }
   </style>
 
