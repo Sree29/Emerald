@@ -8334,7 +8334,7 @@ blockquote.vs-quote .quote-author {
   bottom: 0;
   right: 0;
   height: 0;
-  background-image: linear-gradient(to top, var(--theme-color) 0%, rgba(0, 0, 0, 0) 100%);
+  /* background-image: linear-gradient(to top, var(--theme-color) 0%, rgba(0, 0, 0, 0) 100%); */
   opacity: 0.8;
   transition: all ease 0.4s;
   z-index: 1;
@@ -8394,6 +8394,9 @@ blockquote.vs-quote .quote-author {
 }
 .project-style.style3 img {
   width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 .project-style.style3:hover .project-style__content {
   transform: translateX(0px) skewX(0deg) scale(1);
@@ -8402,9 +8405,9 @@ blockquote.vs-quote .quote-author {
   visibility: visible;
   transition: all 0.3s ease-in-out;
 }
-.project-style:hover::before {
+/* .project-style:hover::before {
   height: 100%;
-}
+} */
 
 .project-carousel .slick-slide {
   transition: all 0.3s ease-in-out;
